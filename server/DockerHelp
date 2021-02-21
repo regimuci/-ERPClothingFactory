@@ -1,0 +1,14 @@
+-- How To Build Project As Docker Image Using DockerFile
+
+docker build -t regimuci/erpclothingfactory .
+
+-- How to Push to DockerHub
+docker push regimuci/erpclothingfactory
+
+-- How to Pull From DockerHub
+
+docker pull  regimuci/erpclothingfactory
+
+-- How To Run
+
+docker run -d -p 8000:8000 --name clothingfactory regimuci/erpclothingfactory

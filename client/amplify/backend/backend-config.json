@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "erpclothingfactorya4ad7940": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

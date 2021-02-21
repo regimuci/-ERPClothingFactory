@@ -1,0 +1,576 @@
+{
+	"info": {
+		"_postman_id": "c905e758-dc40-4843-b255-23573eaab306",
+		"name": "ERPClothingFactory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/products",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/products/B87F1ED61627589CE053020011AC6795/employee",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"products",
+								"B87F1ED61627589CE053020011AC6795",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sold Products (By Store)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/products/B8675FE8FC3603B6E053020011AC778A/sold",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"products",
+								"B8675FE8FC3603B6E053020011AC778A",
+								"sold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sold Products (All Stores)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/products/all/sold",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"products",
+								"all",
+								"sold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/product/B8675FE8FC3E03B6E053020011AC778A",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"product",
+								"B8675FE8FC3E03B6E053020011AC778A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product (Sold)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"sold\",\r\n    \"store\": {\r\n        \"id\": \"BBB80C2D2247782BE053020011ACE1A4\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/product/B8675FE8FC3E03B6E053020011AC778A",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"product",
+								"B8675FE8FC3E03B6E053020011AC778A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product (Delete)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"deleted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/product/B8675FE8FC3E03B6E053020011AC778A",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"product",
+								"B8675FE8FC3E03B6E053020011AC778A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product (Details)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nike Man\",\r\n    \"category\": \"M\",\r\n    \"quality\": \"high\",\r\n    \"price\": 160.0,\r\n    \"image\": \"imgUrl\",\r\n    \"type\": {\r\n        \"id\": \"B8675FE8FC3503B6E053020011AC778A\"\r\n    },\r\n    \"employees\": [\r\n        {\r\n            \"id\": \"B87F1ED61626589CE053020011AC6795\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/product/B8675FE8FC3E03B6E053020011AC778A",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"product",
+								"B8675FE8FC3E03B6E053020011AC778A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Xhinse\",\r\n    \"category\": \"L\",\r\n    \"quality\": \"high\",\r\n    \"price\": 230.0,\r\n    \"image\": \"imgHere\",\r\n    \"status\": \"active\",\r\n    \"type\": {\r\n        \"id\": \"B87F6E99B55A5CF1E053020011ACFA16\"\r\n    },\r\n    \"employees\": [\r\n        {\r\n            \"id\": \"B87F1ED61627589CE053020011AC6795\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/product",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Get All Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/employees",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/employee/BBB80C2D2248782BE053020011ACE1A4",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"employee",
+								"BBB80C2D2248782BE053020011ACE1A4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anila Skenderasi\",\r\n    \"phone_number\": \"0696913777\",\r\n    \"role\": {\r\n        \"id\": \"B87F1ED61622589CE053020011AC6795\"\r\n    },\r\n    \"department\": {\r\n        \"id\": \"B87F1ED61628589CE053020011AC6795\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/employee/BBB80C2D2248782BE053020011ACE1A4",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"employee",
+								"BBB80C2D2248782BE053020011ACE1A4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anila Skenderi\",\r\n    \"phone_number\": \"0696913777\",\r\n    \"role\": {\r\n        \"id\": \"B87F1ED61622589CE053020011AC6795\"\r\n    },\r\n    \"department\": {\r\n        \"id\": \"B87F1ED61628589CE053020011AC6795\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/employee",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "Get All Departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/departments",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Department By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/department/B7A055A5C50B01C4E053020011AC492A",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"department",
+								"B7A055A5C50B01C4E053020011AC492A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Department",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Administrata\",\r\n    \"manager\" : {\r\n        \"id\" : \"B7A055A5C50A01C4E053020011AC492A\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/department/B7A4DD99A4283914E053020011ACED3D",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"department",
+								"B7A4DD99A4283914E053020011ACED3D"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Administrata\",\r\n    \"manager\" : {\r\n        \"id\" : \"B7A055A5C50A01C4E053020011AC492A\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/department",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"department"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Get All Stores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/stores",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Store By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/store/B7A055A5C51001C4E053020011AC492A",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"store",
+								"B7A055A5C51001C4E053020011AC492A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Store",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Adidas Shop\",\r\n    \"location\": \"Tirane e Re\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/store/BBB80C2D2247782BE053020011ACE1A4",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"store",
+								"BBB80C2D2247782BE053020011ACE1A4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dyqan i Ri\",\r\n    \"location\": \"Tirane e Re\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lambda}}/store",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/roles",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Types",
+			"item": [
+				{
+					"name": "Get Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lambda}}/types",
+							"host": [
+								"{{lambda}}"
+							],
+							"path": [
+								"types"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

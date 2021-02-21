@@ -1,0 +1,9 @@
+FROM openjdk:8
+
+MAINTAINER Regi <regi.muci@fshnstudent.info>
+
+COPY target/ClothingFactory-0.0.1.jar ClothingFactory-0.0.1.jar
+
+CMD ["java","-jar","/ClothingFactory-0.0.1.jar"]
+
+EXPOSE 8000
